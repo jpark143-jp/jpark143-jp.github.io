@@ -55,11 +55,7 @@ recoded_data$PhysicallyActive = as.factor(recoded_data$PhysicallyActive)
 View(recoded_data)
 ```
 
-## EDA (Lynette / Shelly)
-- Acsrtaining that histograms looks good, frequenicies within different cells look reasonable, if need be pool categories.(Prof)
-- Distribution of outcome
-- Which variables should we focus on?
-
+## EDA
 ```{r pressure, echo=FALSE}
 #####Frequencies of Response Variable
 # Of 935 observations, 263 have diabetes; rest don't. 29% of observations have diabetes
