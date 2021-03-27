@@ -30,6 +30,7 @@ Calculated with those values, area under ROC curve is 0.73, recall is 0.96, and 
 Having specificity as low as 0.5, even though having recall as high as 0.96, logistic regression is not a perfect model for the prediction and not suitable especially in this business case.
 The reason why it is best to u se specificity(TN/TN+FP) is best explained by the fact that predicting churning customers as non-churning critically matters in the business. 
 Meanwhile, recall(TP/TP+FN) is relatively less important in this project in that predicting non-churning customers as churning does not critically affects the business.
+<br/>
 ![Figure2-1](/Churn_Analysis/image/Figure2-1.PNG)
 <br/>As can be seen in Figure 2-1, coefficient values for each feature generated from logistic regression provide a basis for a feature importance score. 
 The positive socres indicate a feature which predicts Exisiting customers, whereas the negative scores indicate a feature that predicts churning customers. <br/>
