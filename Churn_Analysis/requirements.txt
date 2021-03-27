@@ -1,0 +1,7 @@
+pandas==1.0.1            
+numpy==1.18.1           
+numpy-base==1.18.1           
+joblib==0.14.1
+scikit-learn==0.23.2
+pytest==6.1.1
+pytest-cov==2.10.1
