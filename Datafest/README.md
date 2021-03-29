@@ -67,7 +67,7 @@ to be correlated with physical distancing and reduced mobility. On the graph on 
 mobility and stock prices had been changing in the last three months, and we figured that they had a very similar trend.
 <br/>![Figure1](/Datafest/image/image01.png)
 <br/>![Figure2](/Datafest/image/image02.png)
-<br/>![Figure3](/Datafest/image/image03.png)
+<br/>![Figure3](/Datafest/image/image03.PNG)
 
 ### Model Approach : Time Series Analysis on airline stock price, social distancing, and air-freight data 
  Most of the airline companies are acting in the same way, so we picked United Airline which has the highest correlation 
@@ -75,8 +75,8 @@ with COVID impact. We predicted its stock price and revenue and observed unnatur
 Google trend data revealed international travel has decreased for 70% and domestic flight has decreased for average 40%, 
 obviously due to the social distancing and rapid worldwide spread of COVID-19. After investigating COVID impact on 
 airline companies and LAX, we sought for alternative strategies on how airline companies make profit.
-<br/>![Figure4](/Datafest/image/image04.png)
-<br/>![Figure5](/Datafest/image/image05.png)
+<br/>![Figure4](/Datafest/image/image04.PNG)
+<br/>![Figure5](/Datafest/image/image05.PNG)
 <br/> To clarify, we simplified the total passenger count of the left hand side. Middle plot illustrates the scaled 
 count of cargo transported and aircraft operations in total. Due to the seasonality, cargo has its lowest points in February, 
 but it bounced back to it's usual routine in March. From the effect of social distancing and decreased industrial activities, 
@@ -84,7 +84,7 @@ cargo also somewhat decreased compared to previous years. But for the aircraft o
 ever since the pandemic arises. This made air-freight fees to be more expensive than usual. Oil prices are currently at 
 their lowest point, so airline companies are using passenger aircraft as a cargo carrier to make some profit but this is 
 still not enough for them.
-<br/>![Figure5](/Datafest/image/image06.png)
+<br/>![Figure5](/Datafest/image/image06.PNG)
 
 # Conclusion
  Our analysis suggests that the biggest collapse in terms of stock return and revenue was airline industry 1 with showing 
