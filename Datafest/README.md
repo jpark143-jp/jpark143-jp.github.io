@@ -60,13 +60,16 @@ time components were not in a correct form so we needed to work on feature engin
 methodology was time series analysis on the stock price.
   
 ### Exploratory Data Analysis
- We first started to take a look with its stock data. We retrieved the daily stock price data of S&P 500 companies from 
+ Figure 1 demonstrates the number of US confirmed cases against the date in 2020. We log-transformed it to make the plot 
+more come in better sense. Figure 2 shows the box plots of stock price return on different industries. We see that airline
+industry is the lowest among five sectors and biotechnology is the highest one. 
+<br/>![Figure1](/Datafest/image/image01.png)
+<br/>![Figure2](/Datafest/image/image02.png)
+ Then, we started to take a look with its stock data. We retrieved the daily stock price data of S&P 500 companies from 
 Yahoo Finance and calculated how much return of investment each industry had on average. As we can see, the airline industries 
 had a huge negative return of investment, while having a small variance compared to other industries for which we suspected 
 to be correlated with physical distancing and reduced mobility. On the graph on the left hand side, we plotted how the 
 mobility and stock prices had been changing in the last three months, and we figured that they had a very similar trend.
-<br/>![Figure1](/Datafest/image/image01.png)
-<br/>![Figure2](/Datafest/image/image02.png)
 <br/>![Figure3](/Datafest/image/image03.PNG)
 
 ### Model Approach : Time Series Analysis on airline stock price, social distancing, and air-freight data 
