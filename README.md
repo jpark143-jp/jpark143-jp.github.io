@@ -6,3 +6,6 @@ Each folder in this repo is a name of each project, and branched by "feature/pro
 - Churn Prediction Analysis (2021)
 - Diabetics Prediction Analysis (2020)
 - Datafest(Datathon, 2020)
+
+# Personal Website
+https://jpark1437.wixsite.com/jpark143-jp
