@@ -68,7 +68,7 @@ False positive value which predicts disengaging customers as existing is highly 
 Meanwhile, false negative and true negative values which are associated with engaging customers are highly related to customer retention cost(CRC).  For the customers our model predicts that they will churn, we need to work on customer retention, to keep them from leaving.
 Therefore, the calculated ratio of customer retention cost to acquisition cost comes out to be about 1 to15, which makes $187.5K for customer retention cost, and $12.5K for customer acquisition cost. It can be easily calculated from the confusion matrix. 
 Our model suggests the fact on how we will spend our customer retention; the less the total number of transactions and their amount, they are more likely to churn, and the more the change in transaction count and total revolving balance, they are also, more likely to churn. 
-Therefore they are our target customers. For them, my suggestion is to reward customers by giving them discounts, exclusive or special offers, and generate marketing campaigns, messaging and offers at least once every thirty days
+Therefore they are our target customers. For them, my suggestion is to reward customers by giving them discounts, exclusive or special offers, and generate marketing campaigns, messaging and offers at least once every thirty days.
 For the customer acquisition cost, even though we have a lower budget than we have for retention, a schematic plan of viral marketing is highly recommended.
 Eventually, these budget plan will maximize Return On Investment.
 
