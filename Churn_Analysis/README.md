@@ -33,10 +33,10 @@ Meanwhile, recall(TP/TP+FN) is relatively less important in this project in that
 <br/>
 ![Figure2-1](/Churn_Analysis/image/Figure2-1.PNG)
 <br/>As can be seen in Figure 2-1, coefficient values for each feature generated from logistic regression provide a basis for a feature importance score. 
-The positive socres indicate a feature which predicts Exisiting customers, whereas the negative scores indicate a feature that predicts churning customers. <br/>
+The positive scores indicate a feature which predicts Exisiting customers, whereas the negative scores indicate a feature that predicts churning customers. <br/>
 ![Figure2-2](/Churn_Analysis/image/Figure2-2.PNG)
 <br/>Figure 2-2 shows the sorted coefficients for each features. 
-Change in transaction count (Total_Ct_Chng_Q4_Q1), total number of products held by the customer(Total_Relationship_Count), 'Gender_Male' are the primary features which has which has high positive coefficients, explaining the existing customers. 
+Change in transaction count (Total_Ct_Chng_Q4_Q1), total number of products held by the customer(Total_Relationship_Count), 'Gender_Male' are the primary features which has high positive coefficients, explaining the existing customers. 
 On the other hand, the number of months inactive in the last 12 months(Months_Inactive_12_mon), the number of contacts in the last 12 months(Contacts_Count_12_mon), and 'Gender_Female’ are also primary features which has negative cofficients explaining churning customers.
 Furthermore, a probability of churning can be calculated from the logistic transformation of added effects.
 For example, for a certain customer who is a woman, who has three change in transaction count, two contracts, and so on, an added effects is -0.49(Gender_F)+3*0.74(change in_trans_count)-2*0.57(Contacts_Count)+… and so on.
