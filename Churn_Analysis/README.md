@@ -45,7 +45,7 @@ Nonetheless, again, logistic regression performs risky from its low true negativ
 
 Random Forest has been performed next, as having many incidental features after the categorical encoding and as it can deal with nonlinearities better than logistic regression.
 Also, it has been chosen for the ranking of the feature importance in that it is easy to measure the relative importance of each feature on the prediction. 
-Using built-in fucntion from sklearn package, Random Forest showed 0.96 accuracy, 0.93 cross-validation score, AUC ROC(Area under ROC curve) 0.89, 0.97 F-1 score, 0.98 recall score, and 0.79 specificity.
+Using built-in function from sklearn package, Random Forest showed 0.96 accuracy, 0.93 cross-validation score, AUC ROC(Area under ROC curve) 0.89, 0.97 F-1 score, 0.98 recall score, and 0.79 specificity.
 The new model has been improved compared to the baseline model not only having higher AUR ROC, F-1 score, and recall, but also having greater increase in true negative rate.<br/>
 ![Figure3](/Churn_Analysis/image/Figure3.PNG)
 <br/>Figure3 shows a confusion matrix which indicates true negative, true positive, false negative, and false positive values that are 258, 1675, 72, 21, respectively. 
