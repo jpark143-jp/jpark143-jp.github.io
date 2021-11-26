@@ -26,7 +26,7 @@ Gestational diabetes | Categorical | Yes/No <br/>
 Frequent Urination | Categorial | Yes/No <br/>
 
 # Methodology
-### Data Processing 
+### Data Pre-processing 
 Creating a simple loop helped us navigate NA values and 47 of them were removed out.  As we have 14 categorical variables, label encoding was performed using "recode()" function in dplyr package in a simple and intuitive manner.
 
 ### Exploratory Data Analysis
