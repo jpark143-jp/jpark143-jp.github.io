@@ -4,7 +4,7 @@ Each folder in this repo is a name of each project, and branched by "feature/pro
 
 # List
 - Churn Prediction Analysis (2021)
-- Diabetics Prediction Analysis (2020)
+- Diabetes Prediction Analysis (2020)
 - Datafest(Datathon, 2020)
 - Summer 2021 internship projects(Feature/Summer2021_intern)
 
