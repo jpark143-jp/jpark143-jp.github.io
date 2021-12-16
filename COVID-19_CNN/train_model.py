@@ -54,80 +54,41 @@ model=Covid19Net.build(width=224,height=224,depth=3,classes=2)
 opt= Adam(.001)
 model.compile(loss="binary_crossentropy",optimizer=opt,metrics=["accuracy"])
 
-folders = os.listdir(config.TRAIN_PATH)
-image_data = []
-labels = []
-from keras.preprocessing import image
+M=model.fit(
+  trainGen,
+  steps_per_epoch=lenTrain//BS,
+  validation_data=valGen,
+  validation_steps=lenVal//BS,
+  epochs=NUM_EPOCHS)
 
-for ix in folders:
-    path = os.path.join(config.TRAIN_PATH,ix)
-    for im in os.listdir(path):
-        img = image.load_img(os.path.join(path,im),target_size=((224,224)))
-        img_array = image.img_to_array(img)
-        image_data.append(img_array)
-        labels.append(ix)
-        
-x_train = np.array(image_data)
-y_train = np.array(labels)
+print("Now evaluating the model")
+testGen.reset()
+pred_indices=model.predict_generator(testGen,steps=(lenTest//BS)+1)
 
-hist = model.fit(x_train, y_train,
-                    batch_size=32,
-                    epochs = 25,
-                    validation_split = 0.10 ) #callbacks=callbacks_list)
+pred_indices=np.argmax(pred_indices,axis=1)
 
-# M=model.fit_generator(
-#   trainGen,
-#   steps_per_epoch=lenTrain//BS,
-#   validation_data=valGen,
-#   validation_steps=lenVal//BS,
-#   class_weight=classWeight,
-#   epochs=NUM_EPOCHS)
-#
-# print("Now evaluating the model")
-# testGen.reset()
-# pred_indices=model.predict_generator(testGen,steps=(lenTest//BS)+1)
-#
-# pred_indices=np.argmax(pred_indices,axis=1)
-#
-# print(classification_report(testGen.classes, pred_indices, target_names=testGen.class_indices.keys()))
+print(classification_report(testGen.classes, pred_indices, target_names=testGen.class_indices.keys()))
 
-# cm=confusion_matrix(testGen.classes,pred_indices)
-# total=sum(sum(cm))
-# accuracy=(cm[0,0]+cm[1,1])/total
-# specificity=cm[1,1]/(cm[1,0]+cm[1,1])
-# sensitivity=cm[0,0]/(cm[0,0]+cm[0,1])
-# print(cm)
-# print(f'Accuracy: {accuracy}')
-# print(f'Specificity: {specificity}')
-# print(f'Sensitivity: {sensitivity}')
-#
-# N = NUM_EPOCHS
-# plt.style.use("ggplot")
-# plt.figure()
-# plt.plot(np.arange(0,N), M.history["loss"], label="train_loss")
-# plt.plot(np.arange(0,N), M.history["val_loss"], label="val_loss")
-# plt.plot(np.arange(0,N), M.history["acc"], label="train_acc")
-# plt.plot(np.arange(0,N), M.history["val_acc"], label="val_acc")
-# plt.title("Training Loss and Accuracy on the IDC Dataset")
-# plt.xlabel("Epoch No.")
-# plt.ylabel("Loss/Accuracy")
-# plt.legend(loc="lower left")
-# plt.savefig('plot.png')
+cm=confusion_matrix(testGen.classes,pred_indices)
+total=sum(sum(cm))
+accuracy=(cm[0,0]+cm[1,1])/total
+specificity=cm[1,1]/(cm[1,0]+cm[1,1])
+sensitivity=cm[0,0]/(cm[0,0]+cm[0,1])
+print(cm)
+print(f'Accuracy: {accuracy}')
+print(f'Specificity: {specificity}')
+print(f'Sensitivity: {sensitivity}')
 
-plt.figure(1, figsize = (15, 5))
-plt.subplot(1,2,1)
-plt.xlabel("Epochs")
-plt.ylabel("Loss")
-plt.plot( hist.history["loss"], label = "Training Loss")
-plt.plot( hist.history["val_loss"], label = "Validation Loss")
-plt.grid(True)
-plt.legend()
+N = NUM_EPOCHS
+plt.style.use("ggplot")
+plt.figure()
+plt.plot(np.arange(0,N), M.history["loss"], label="train_loss")
+plt.plot(np.arange(0,N), M.history["val_loss"], label="val_loss")
+plt.plot(np.arange(0,N), M.history["acc"], label="train_acc")
+plt.plot(np.arange(0,N), M.history["val_acc"], label="val_acc")
+plt.title("Training Loss and Accuracy on the IDC Dataset")
+plt.xlabel("Epoch No.")
+plt.ylabel("Loss/Accuracy")
+plt.legend(loc="lower left")
+plt.savefig('plot.png')
 
-plt.subplot(1,2,2)
-plt.xlabel("Epochs")
-plt.ylabel("Accuracy")
-plt.plot( hist.history["accuracy"], label = "Training Accuracy")
-plt.plot( hist.history["val_accuracy"], label = "Validation Accuracy")
-plt.grid(True)
-plt.legend()
-plt.show()
