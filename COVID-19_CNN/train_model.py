@@ -22,9 +22,9 @@ lenVal=len(list(paths.list_images(config.VAL_PATH)))
 lenTest=len(list(paths.list_images(config.TEST_PATH)))
 
 trainLabels=[int(p.split(os.path.sep)[-2]) for p in trainPaths]
-trainLabels=np_utils.to_categorical(trainLabels)
-classTotals=trainLabels.sum(axis=0)
-classWeight=classTotals.max()/classTotals
+trainLabels = tf.one_hot(trainLabels, depth=2) # modified
+classTotals=sum(trainLabels) # modified
+classWeight=max(classTotals)/classTotals # modified
 
 trainAug = ImageDataGenerator(
   rescale=1/255.0,
