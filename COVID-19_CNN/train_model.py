@@ -23,7 +23,7 @@ lenTest=len(list(paths.list_images(config.TEST_PATH)))
 
 trainLabels=[int(p.split(os.path.sep)[-2]) for p in trainPaths]
 trainLabels = tf.one_hot(trainLabels, depth=2) # modified
-classTotals=sum(trainLabels) # modified
+classTotals=sum(trainLabels)  
 classWeight=max(classTotals)/classTotals # modified
 
 trainAug = ImageDataGenerator(
@@ -38,17 +38,17 @@ trainGen = trainAug.flow_from_directory(
   config.TRAIN_PATH,
   target_size=(224,224),
   batch_size=BS,
-  class_mode = 'binary')
+  class_mode = 'categorical')    # 'binary' -> 'categorical'
 valGen = valAug.flow_from_directory(
   config.VAL_PATH,
   target_size=(224, 224),
   batch_size=BS,
-  class_mode='binary')
+  class_mode='categorical')      # 'binary' -> 'categorical'
 testGen = valAug.flow_from_directory(
   config.TEST_PATH,
   target_size=(224, 224),
   batch_size=BS,
-  class_mode='binary')
+  class_mode='categorical')      # 'binary' -> 'categorical'
 
 model=Covid19Net.build(width=224,height=224,depth=3,classes=2)
 opt= Adam(.001)
