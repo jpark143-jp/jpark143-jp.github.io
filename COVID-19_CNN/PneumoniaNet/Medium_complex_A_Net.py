@@ -51,11 +51,5 @@ class Medium_complex_A_Net:
     
     model.add(Dense(units = 2, activation = 'sigmoid'))
 
-    model.compile(loss='binary_crossentropy',
-                  optimizer='adam',
-                  metrics=['accuracy', 'binary_crossentropy'])
-    filepath = "pneumonia_classification.hdf5"
-    checkpoint = ModelCheckpoint(filepath, monitor='val_loss', verbose=2, save_best_only=True, mode='min', patience=3)
-    callbacks_list = [checkpoint]
 
     return model
