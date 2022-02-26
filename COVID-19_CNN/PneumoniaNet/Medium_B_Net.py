@@ -11,7 +11,7 @@ from keras.layers.core import Dropout
 from keras.layers.core import Dense
 from keras import backend as K
 
-class Covid19Net:
+class Medium_B_Net:
   @staticmethod
   def build(width,height,depth,classes):
     model=Sequential()
@@ -22,7 +22,7 @@ class Covid19Net:
       shape=(depth,height,width)
       channelDim=1
 
-    model.add(Conv2D(16 , (3,3) , strides = 1 , padding = 'same' , activation = 'relu' , input_shape = (150,150,1)))
+    model.add(Conv2D(16 , (3,3) , strides = 1 , padding = 'same' , activation = 'relu' , input_shape = shape))
     model.add(BatchNormalization())
     model.add(MaxPool2D((2,2) , strides = 2 , padding = 'same'))
 
