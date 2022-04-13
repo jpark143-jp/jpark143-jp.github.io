@@ -32,6 +32,7 @@ Creating a simple loop helped us navigate NA values and 47 of them were removed 
 ### Exploratory Data Analysis
 As can be seen in Figure1, numerical variables such as BMI, Sleep, SoundSleep, and Pregancies are plotted by Diabetic as probability density functions.  Only Pregancies are skewed and other variables are well-distributed as close to normal distribution. 
 <br/>![Figure1](/Diabetics Prediction Analysis/image/Figure1.png)
+<br/>![Figure1](https://github.com/jpark143-jp/jpark143-jp.github.io/tree/master/Diabetics%20Prediction%20Analysis/Figure1.png)
 
 Figure2 shows side-by-side barplots for every categorical variable against Diabetic.  Considering we have about 70% of factor "no" and 30% of factor "yes" for Diabetic in total, we can grasp a general idea of data from these plots. 
 <br/>![Figure2](/Diabetics Prediction Analysis/image/FIgure2.png)
